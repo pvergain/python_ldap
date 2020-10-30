@@ -21,14 +21,23 @@ RUN apt-get update \
 
 # we need the bash shell for the 'source' binary
 SHELL ["/bin/bash", "-c"]
+WORKDIR /opt/docker/
+COPY ./requirements.txt .
+RUN python -m venv .venv && \
+    source .venv/bin/activate && \
+    pip install -U pip wheel && \
+    pip install -r requirements.txt
 
 #### Start stage 2 #########################################
-#
+
 FROM python:3.9.0-slim-buster as deployer
 
 # ajout d'informations à l'image pour pouvoir l'identifier plus facilement
 LABEL maintainer="pvergain@pm.me"
-LABEL description="Python 3.9.0 + LDAP"
+LABEL description="Python + LDAP + djnago"
+
+WORKDIR /opt/docker/
+COPY --from=builder /opt/docker/.venv ./.venv
 
 # we only need  the ldap libraries
 # https://packages.debian.org/fr/jessie/libldap-2.4-2
@@ -44,6 +53,10 @@ RUN apt-get update \
 ENV PYTHONUNBUFFERED 1
 
 ## End stage 2 #########################################
+
+ADD start.sh /
+RUN chmod +x /start.sh
+CMD ["/start.sh"]
 
 ## for debug purpose if there are problems
 # CMD ["sleep", "10000000000"]
