@@ -1,0 +1,27 @@
+---
+# pip install pre-commit
+
+# .pre-commit-config.yaml
+# ========================
+#
+# pre-commit clean
+# pre-commit install
+# pre-commit install-hooks
+#
+# precommit hooks installation
+#
+# - pre-commit autoupdate
+#
+# continuous integration
+# ======================
+#
+# - pre-commit run --all-files
+# - pre-commit run reorder-python-imports
+#
+repos:
+  - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+    rev: v0.1.0
+    hooks:
+      - id: dockerfilelint
+        stages: [commit]
+
