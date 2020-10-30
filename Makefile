@@ -8,7 +8,7 @@
 SHELL = /bin/bash
 
 # Put it first so that "make" without argument is like "make help".
-# docker exec -it b384 /bin/bash
+# docker exec -it 7b06 /bin/bash
 help:
 	@echo " "
 	@echo "Targets:"
@@ -17,6 +17,7 @@ help:
 	@echo "- make images"
 	@echo "- make run"
 	@echo "- make login"
+	@echo "- make ps"
 	@echo "- make push (push to docker)"
 	@echo "- make autoupdate"
 	@echo " "
@@ -43,6 +44,10 @@ push:
 
 images:
 	docker images
+
+ps:
+	docker ps
+
 
 .PHONY: help  Makefile
 

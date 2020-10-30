@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source /opt/docker/./venv/bin/activate
+source /opt/docker/.venv/bin/activate
 python
