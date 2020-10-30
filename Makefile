@@ -30,7 +30,7 @@ autoupdate:
 	pre-commit autoupdate
 
 build:
-	docker build --tag python_ldap:3.9.0 .
+	docker build --tag python_ldap:3.9.0-slim-buster .
 
 images:
 	docker images
