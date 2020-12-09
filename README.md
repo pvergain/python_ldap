@@ -3,7 +3,7 @@
 - pvergain/python_ldap:3.9.0-slim-buster
 
 
-Exemple for building a Django + LDAP dphinx documentation with gitlab
+Exemple for building a Django + LDAP sphinx documentation with gitlab
 
 ```yaml
 ---

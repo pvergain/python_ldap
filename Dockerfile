@@ -8,6 +8,7 @@ FROM python:3.9.0-slim-buster as builder
 # gcc because we need regex and pyldap
 # libldap2-dev because we need pyldap
 RUN apt-get update \
+    && pip install -U pip wheel \
     && apt-get install --no-install-recommends -y gcc libldap2-dev libldap-2.4-2 libsasl2-dev libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
