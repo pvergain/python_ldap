@@ -4,8 +4,26 @@
 
 # Pour la construction de l'image
 
-Il faut aller sur la page https://hub.docker.com/repository/docker/pvergain/python_ldap/builds
-et lancer le build de l'image docker.
+$ make login
+docker login
+Authenticating with existing credentials...
+WARNING! Your password will be stored unencrypted in /home/pvergain/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+
+$ make push
+docker push pvergain/python_ldap:3.9.1-slim-buster
+The push refers to repository [docker.io/pvergain/python_ldap]
+9b5f7999314e: Pushed
+9f886c65c87a: Mounted from library/python
+3a00c899bb1f: Mounted from library/python
+298944d68297: Mounted from library/python
+daf898595055: Mounted from library/python
+87c8a1d8f54f: Mounted from library/python
+3.9.1-slim-buster: digest: sha256:3ed7d39063bdaf1874c098d9f33a61a5e779b77691c92a48bb6feea87ba97864 size: 1582
+
 
 
 Exemple for building a Django + LDAP sphinx documentation with gitlab
