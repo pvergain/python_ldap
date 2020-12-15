@@ -1,6 +1,11 @@
 # Last version
 
-- pvergain/python_ldap:3.9.0-slim-buster
+- pvergain/python_ldap:3.9.1-slim-buster
+
+# Pour la construction de l'image
+
+Il faut aller sur la page https://hub.docker.com/repository/docker/pvergain/python_ldap/builds
+et lancer le build de l'image docker.
 
 
 Exemple for building a Django + LDAP sphinx documentation with gitlab
