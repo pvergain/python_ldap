@@ -1,10 +1,25 @@
-# Last version
+Last version
 
-- pvergain/python_ldap:3.9.1-slim-buster
+python_ldap on  main [!] via 🐍 v3.9.2
+❯ make build
+docker build --tag pvergain/python_ldap:3.9.2-slim-buster .
+Sending build context to Docker daemon  195.6kB
+Step 1/4 : FROM python:3.9.2-slim-buster as builder
+ ---> ce689abb4f0d
+Step 2/4 : RUN apt-get update     && pip install -U pip wheel     && apt-get install --no-install-recommends -y gcc libldap2-dev libldap-2.4-2 libsasl2-dev libssl-dev     && rm -rf /var/lib/apt/lists/*
+ ---> Using cache
+ ---> 937359780858
+Step 3/4 : ENV PYTHONUNBUFFERED 1
+ ---> Using cache
+ ---> 36528b5ea352
+Step 4/4 : CMD ["sleep", "10000000000"]
+ ---> Using cache
+ ---> e5c482716cc5
+Successfully built e5c482716cc5
+Successfully tagged pvergain/python_ldap:3.9.2-slim-buster
 
-# Pour la construction de l'image
-
-$ make login
+python_ldap on  main [!] via 🐍 v3.9.2
+❯ make login
 docker login
 Authenticating with existing credentials...
 WARNING! Your password will be stored unencrypted in /home/pvergain/.docker/config.json.
@@ -13,16 +28,17 @@ https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 
 Login Succeeded
 
-$ make push
-docker push pvergain/python_ldap:3.9.1-slim-buster
+python_ldap on  main [!] via 🐍 v3.9.2
+❯ make push
+docker push pvergain/python_ldap:3.9.2-slim-buster
 The push refers to repository [docker.io/pvergain/python_ldap]
-9b5f7999314e: Pushed
-9f886c65c87a: Mounted from library/python
-3a00c899bb1f: Mounted from library/python
-298944d68297: Mounted from library/python
-daf898595055: Mounted from library/python
-87c8a1d8f54f: Mounted from library/python
-3.9.1-slim-buster: digest: sha256:3ed7d39063bdaf1874c098d9f33a61a5e779b77691c92a48bb6feea87ba97864 size: 1582
+a4d863a16950: Pushed
+fe796314f3f4: Mounted from library/python
+a642096e6e01: Mounted from library/python
+b327e713d8e9: Mounted from library/python
+c38160dfb10e: Mounted from library/python
+9eb82f04c782: Mounted from library/python
+3.9.2-slim-buster: digest: sha256:84c0c17b2b1bb51d5ef484aab7c20a1637d61ab713502bed22494fbdcc3c7d14 size: 1582
 
 
 
@@ -43,7 +59,7 @@ Exemple for building a Django + LDAP sphinx documentation with gitlab
 #
 # - https://hub.docker.com/repository/docker/pvergain/python_ldap
 #
-image: pvergain/python_ldap:3.9.0-slim-buster
+image: pvergain/python_ldap:3.9.2-slim-buster
 
 pages:
   stage: deploy
