@@ -1,4 +1,5 @@
 Last version
+==============
 
 python_ldap on  main [!] via 🐍 v3.9.2
 ❯ make build
@@ -40,6 +41,12 @@ c38160dfb10e: Mounted from library/python
 9eb82f04c782: Mounted from library/python
 3.9.2-slim-buster: digest: sha256:84c0c17b2b1bb51d5ef484aab7c20a1637d61ab713502bed22494fbdcc3c7d14 size: 1582
 
+
+Used by
+=========
+
+- tuto_django
+- intranet_doc
 
 
 Exemple for building a Django + LDAP sphinx documentation with gitlab
