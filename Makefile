@@ -13,12 +13,12 @@ help:
 	@echo " "
 	@echo "Targets:"
 	@echo " "
-	@echo "- make build"
+	@echo "- make build (1)"
 	@echo "- make images"
 	@echo "- make run"
-	@echo "- make login"
+	@echo "- make login (2)"
 	@echo "- make ps"
-	@echo "- make push (push to docker)"
+	@echo "- make push (push to docker) (3)"
 	@echo "- make autoupdate"
 	@echo " "
 
@@ -30,17 +30,17 @@ autoupdate:
 	pre-commit autoupdate
 
 build:
-	docker build --tag pvergain/python_ldap:3.9.2-slim-buster .
+	docker build --tag pvergain/python_ldap:3.9.6-slim-buster .
 
 login:
 	docker login
 
 run:
 	# https://docs.docker.com/docker-hub/#step-3-download-and-install-docker-desktop
-	docker run pvergain/python_ldap:3.9.2-slim-buster
+	docker run pvergain/python_ldap:3.9.6-slim-buster
 
 push:
-	docker push pvergain/python_ldap:3.9.2-slim-buster
+	docker push pvergain/python_ldap:3.9.6-slim-buster
 
 images:
 	docker images
