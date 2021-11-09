@@ -46,7 +46,7 @@ Used by
 =========
 
 - tuto_django
-- intranet_doc
+- intranet_dev
 
 
 Exemple for building a Django + LDAP sphinx documentation with gitlab

@@ -8,26 +8,26 @@ Pour le changement
 ===================
 
 - 1) modifier Dockerfile
-- 2) modifer Makefile
+- 2) modifier Makefile
 - 3) make build
 - 4) make login (2)
 - 5) make push
 
 
-Last version : 3.9.6 (Lundi 5 juillet 2021)
+Last version : 3.10.0 (Lundi 5 juillet 2021)
 ==============================================
 
 
-Exemple : 3.9.4
+Exemple : 3.10.0
 ========================
 
 ::
 
-    python_ldap on  main [!] via 🐍 v3.9.4
+    python_ldap on  main [!] via 🐍 v3.10.0
     ❯ make build
-    docker build --tag pvergain/python_ldap:3.9.4-slim-buster .
+    docker build --tag pvergain/python_ldap:3.10.0-slim-buster .
     Sending build context to Docker daemon  195.6kB
-    Step 1/4 : FROM python:3.9.4-slim-buster as builder
+    Step 1/4 : FROM python:3.10.0-slim-buster as builder
      ---> ce689abb4f0d
     Step 2/4 : RUN apt-get update     && pip install -U pip wheel     && apt-get install --no-install-recommends -y gcc libldap2-dev libldap-2.4-2 libsasl2-dev libssl-dev     && rm -rf /var/lib/apt/lists/*
      ---> Using cache
@@ -39,9 +39,9 @@ Exemple : 3.9.4
      ---> Using cache
      ---> e5c482716cc5
     Successfully built e5c482716cc5
-    Successfully tagged pvergain/python_ldap:3.9.4-slim-buster
+    Successfully tagged pvergain/python_ldap:3.10.0-slim-buster
 
-    python_ldap on  main [!] via 🐍 v3.9.4
+    python_ldap on  main [!] via 🐍 v3.10.0
     ❯ make login
     docker login
     Authenticating with existing credentials...
@@ -51,9 +51,9 @@ Exemple : 3.9.4
 
     Login Succeeded
 
-    python_ldap on  main [!] via 🐍 v3.9.4
+    python_ldap on  main [!] via 🐍 v3.10.0
     ❯ make push
-    docker push pvergain/python_ldap:3.9.4-slim-buster
+    docker push pvergain/python_ldap:3.10.0-slim-buster
     The push refers to repository [docker.io/pvergain/python_ldap]
     a4d863a16950: Pushed
     fe796314f3f4: Mounted from library/python
@@ -61,7 +61,7 @@ Exemple : 3.9.4
     b327e713d8e9: Mounted from library/python
     c38160dfb10e: Mounted from library/python
     9eb82f04c782: Mounted from library/python
-    3.9.4-slim-buster: digest: sha256:84c0c17b2b1bb51d5ef484aab7c20a1637d61ab713502bed22494fbdcc3c7d14 size: 1582
+    3.10.0-slim-buster: digest: sha256:84c0c17b2b1bb51d5ef484aab7c20a1637d61ab713502bed22494fbdcc3c7d14 size: 1582
 
 
 
@@ -84,7 +84,7 @@ Exemple for building a Django + LDAP sphinx documentation with gitlab
     #
     # - https://hub.docker.com/repository/docker/pvergain/python_ldap
     #
-    image: pvergain/python_ldap:3.9.4-slim-buster
+    image: pvergain/python_ldap:3.10.0-slim-buster
 
     pages:
       stage: deploy

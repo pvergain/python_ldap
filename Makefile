@@ -30,17 +30,17 @@ autoupdate:
 	pre-commit autoupdate
 
 build:
-	docker build --tag pvergain/python_ldap:3.9.6-slim-buster .
+	docker build --tag pvergain/python_ldap:3.10.0-slim-bullseye .
 
 login:
 	docker login
 
 run:
 	# https://docs.docker.com/docker-hub/#step-3-download-and-install-docker-desktop
-	docker run pvergain/python_ldap:3.9.6-slim-buster
+	docker run pvergain/python_ldap:3.10.0-slim-bullseye
 
 push:
-	docker push pvergain/python_ldap:3.9.6-slim-buster
+	docker push pvergain/python_ldap:3.10.0-slim-bullseye
 
 images:
 	docker images

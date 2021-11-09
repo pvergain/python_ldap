@@ -3,7 +3,7 @@
 # building the python virtualenv with ldap support
 # (we need gcc and libldap2-dev libsasl2-dev libssl-dev)
 # https://hub.docker.com/_/python
-FROM python:3.9.6-slim-buster as builder
+FROM python:3.10.0-slim-bullseye as builder
 
 # gcc because we need regex and pyldap
 # libldap2-dev because we need pyldap
