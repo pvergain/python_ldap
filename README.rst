@@ -8,7 +8,7 @@ Pour le changement
 ===================
 
 - 1) modifier Dockerfile
-- 2) modifier Makefile
+- 2) modifier Makefilemake
 - 3) make build
 - 4) make login (2)
 - 5) make push
@@ -128,3 +128,15 @@ Makefile
 - https://github.com/pvergain/python_ldap/blob/main/.pre-commit-config.yaml
 
 
+- https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
+- https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
+- https://github.com/settings/security-log
+
+::
+
+    ✦ ❯ git push
+    Username for 'https://github.com': pvergain
+    Password for 'https://pvergain@github.com':
+    remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+    remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+    fatal: Échec d'authentification pour 'https://github.com/pvergain/python_ldap.git/'
